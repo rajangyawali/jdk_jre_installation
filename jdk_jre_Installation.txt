@@ -1,0 +1,51 @@
+Installing the JDK and JRE on Ubuntu
+
+1. Download the JDK and JRE from the oracle site according to your system requirements.
+
+2. They will be downloaded to /home/user_name/Downloads
+
+3. Make a directory called java by using the command:
+	sudo mkdir -p /usr/local/java
+
+4. Type: cd /home/user_name/Downloads
+
+5. Type: sudo cp -r jre_filename.tar.gz /usr/local/java
+
+6. Type: cd /usr/local/java
+
+7. Type: sudo chmod a+x jre_filename.tar.gz
+
+8. Extract the tar file 
+	Type: sudo tar xvzf jre-8u73-linux-x64.tar.gz
+
+9. Double check your directories:
+	Type: ls -a
+
+10. Type: sudo gedit /etc/profile
+
+11. Type:
+	JAVA_HOME=/usr/local/java/jre_name
+	PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+	export JAVA_HOME
+	export PATH
+
+12. Save the file
+
+13. Inform your Ubuntu Linux system where your Oracle Java JRE is located by typing these:
+	sudo update-alternatives --install "/usr/bin/java" "java" "/usr/local/java/jre_name/bin/java"
+
+	sudo update-alternatives --install "/usr/bin/java" "javaws" "/usr/local/java/jre_name/bin/javaws"
+
+14. Inform your Ubuntu Linux system that Oracle Java JRE must be the default Java by typing:
+
+	sudo update-alternatives --set java /usr/local/java/jre_name/bin/java 
+
+	sudo update-alternatives --set javaws /usr/local/java/jre_name/bin/javaws
+
+15. Type: java -version 
+	to check whether JRE is installed on system or not. 
+
+
+16. Similar process follows in the installation of jdk.	
+
+
